@@ -16,7 +16,7 @@ int main (){
 	}else if(state == 'f' ){
 		printf("Your state is Find");
 	}else{
-		printf("İnvalid input");
+		printf("Invalid input");
 	}
 
 }
