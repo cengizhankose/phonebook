@@ -7,7 +7,7 @@ struct ContactDetail
 	char phonenumber[50];
 }Contact;
 
-int read()
+void read()
 {
 	int i;
 	FILE *f;
@@ -36,7 +36,7 @@ int read()
 	system("cls");
 }
 
-int write()
+void write()
 {
 	char test;
 	FILE *f;
@@ -65,7 +65,7 @@ int write()
 	fclose(f);
 }
 
-int find()
+void find()
 {
 	
 }
