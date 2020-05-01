@@ -13,7 +13,7 @@ int write()
 	f = fopen("data.txt","a+");
 	if(f==0)
 	{
-		f=fopen("add.txt","w+");
+		f=fopen("data.txt","w+");
 	}
 }
 
