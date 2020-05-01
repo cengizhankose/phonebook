@@ -24,16 +24,22 @@ void read()
 	printf("\tPHONE NUMBER\n");
 	for(i=0;i<35;i++)
 		printf("=");
-	while(fread(&Contact,sizeof(Contact),1,f)==1)
+	/*while(fread(&Contact,sizeof(Contact),1,f)==1)
 	{
 		printf("\n%s\t%s",Contact.name,Contact.phonenumber);
-	}
+	}*/
+	while(!feof(f))
+	{
+		fscanf(f,"%s\t%s\n",&Contact.name,&Contact.phonenumber);
+		printf("\n%s\t%s",Contact.name,Contact.phonenumber);
+	}	
 	puts("");
 	for(i=0;i<35;i++)
 		printf("=");	
 	fclose(f);
+	printf("\nPress any key to exit");
 	getch();
-	system("cls");
+	//system("cls");
 }
 
 void write()
@@ -47,14 +53,15 @@ void write()
 	}
 	while(1)
 	{
-		printf("\n Enter Contact Details:");
+		printf("Enter Contact Details:");
 		printf("\n==========================\n");
 		printf("Enter Name:\n");
 		scanf("%s",Contact.name);
 		fflush(stdin);
 		printf("Enter Phonenumber:\n");
 		scanf("%s",Contact.phonenumber);
-		fwrite(&Contact,sizeof(Contact),1,f);
+		//fwrite(&Contact,sizeof(Contact),1,f);
+		fprintf(f,"%s\t%s\n",Contact.name,Contact.phonenumber);
 		fflush(stdin);
 		printf("\n\nContact is successfully added!");
 		printf("\n Press esc key to exit,  any other key to add another contact:");
