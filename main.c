@@ -2,19 +2,28 @@
 #include <stdlib.h>
 
 
-int read(){
+int read()
+{
 	
 }
 
-int write(){
+int write()
+{
+	FILE *f;
+	f = fopen("data.txt","a+");
+	if(f==0)
+	{
+		f=fopen("add.txt","w+");
+	}
+}
+
+int find()
+{
 	
 }
 
-int find(){
-	
-}
-
-int main (){
+int main ()
+{
 	
 	char state;
 	
@@ -22,7 +31,8 @@ int main (){
 	scanf("%c", &state);
 	//printf("Your state is : %c",state);
 	
-	switch(state){
+	switch(state)
+	{
 		case 'r':
 			system("cls");
 			printf("Your state is Read");
@@ -40,7 +50,6 @@ int main (){
 			printf("Invalid input");
 			break;
 	}
-
 
 }
 
