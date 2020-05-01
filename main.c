@@ -1,5 +1,18 @@
 #include <stdio.h>
+#include <stdlib.h>
 
+
+int read(){
+	
+}
+
+int write(){
+	
+}
+
+int find(){
+	
+}
 
 int main (){
 	
@@ -9,15 +22,25 @@ int main (){
 	scanf("%c", &state);
 	//printf("Your state is : %c",state);
 	
-	if( state == 'r' ){
-		printf("Your state is Read");
-	}else if( state == 'w' ){
-		printf("Your state is Write");
-	}else if(state == 'f' ){
-		printf("Your state is Find");
-	}else{
-		printf("Invalid input");
+	switch(state){
+		case 'r':
+			system("cls");
+			printf("Your state is Read");
+			break;
+		case 'w':
+			system("cls");
+			printf("Your state is Write");
+			break;
+		case 'f':
+			system("cls");
+			printf("Your state is Find");
+			break;
+		default:
+			system("cls");
+			printf("Invalid input");
+			break;
 	}
+
 
 }
 
