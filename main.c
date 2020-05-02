@@ -60,7 +60,7 @@ void write()
 		fprintf(f,"%s\t%s\n",Contact.name,Contact.phonenumber);
 		fflush(stdin);
 		printf("\n\nContact is successfully added!");
-		printf("\n Press any key to exit");
+		printf("\nPress any key to exit");
 		getch();
 		break;		
 	}
