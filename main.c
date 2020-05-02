@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include <conio.h>
 
 
 struct ContactDetail
@@ -8,7 +9,7 @@ struct ContactDetail
 	char phonenumber[50];
 }Contact;
 
-void read()
+int read()
 {
 	int i;
 	FILE *f;
@@ -61,14 +62,14 @@ void write()
 		fflush(stdin);
 		printf("\n\nContact is successfully added!");
 		printf("\n Press esc key to exit,  any other key to add another contact:");
-		test=getche();
+		test=getch();
 		if(test==27)
 			break;		
 	}
 	fclose(f);
 }
 
-void find()
+int find()
 {
 	char nameToSearch[40];
 	FILE *f;
@@ -83,12 +84,12 @@ void find()
 	printf("Enter the name:\n");
 	scanf("%s",nameToSearch);
 	//printf("%s",nameToSearch);
-	search(nameToSearch);
+	searchName(nameToSearch);
 	printf("\nPress any key to exit");
 	getch();
 }
 
-void search(char nameToSearch[])
+void searchName(char nameToSearch[])
 {
 	char line[401];
 	FILE *f;
