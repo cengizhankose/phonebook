@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+
 struct ContactDetail
 {
 	char name[50];
@@ -74,7 +75,33 @@ void write()
 
 void find()
 {
-	
+	char nameToSearch[40];
+	FILE *f;
+	f = fopen("data.txt","r");
+	if(f == NULL)
+	{
+		system("cls");
+		printf("No Contacts Available");
+		getch();
+		return -1;
+	}
+	printf("Enter the name:\n");
+	scanf("%s",nameToSearch);
+	//printf("%s",nameToSearch);
+	search(nameToSearch);
+}
+
+void search(char nameToSearch[])
+{
+	char line[401];
+	FILE *f;
+	f = fopen("data.txt","r");
+	while(!feof(f))
+	{
+		fgets(line,400,f);
+		if(strstr(line,nameToSearch)!=NULL)
+		printf("\n%s",line);		
+	}	
 }
 
 int main ()
@@ -100,7 +127,8 @@ int main ()
 			break;
 		case 'f':
 			system("cls");
-			printf("Your state is Find");
+			printf("Your state is Find\n");
+			find();
 			break;
 		default:
 			system("cls");
