@@ -42,7 +42,6 @@ void read()
 
 void write()
 {
-	char test;
 	FILE *f;
 	f = fopen("data.txt","a+");
 	if(f==NULL)
@@ -61,10 +60,9 @@ void write()
 		fprintf(f,"%s\t%s\n",Contact.name,Contact.phonenumber);
 		fflush(stdin);
 		printf("\n\nContact is successfully added!");
-		printf("\n Press esc key to exit,  any other key to add another contact:");
-		test=getch();
-		if(test==27)
-			break;		
+		printf("\n Press any key to exit");
+		getch();
+		break;		
 	}
 	fclose(f);
 }
