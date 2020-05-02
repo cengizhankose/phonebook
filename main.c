@@ -25,10 +25,6 @@ void read()
 	printf("\tPHONE NUMBER\n");
 	for(i=0;i<35;i++)
 		printf("=");
-	/*while(fread(&Contact,sizeof(Contact),1,f)==1)
-	{
-		printf("\n%s\t%s",Contact.name,Contact.phonenumber);
-	}*/
 	while(!feof(f))
 	{
 		fscanf(f,"%s\t%s\n",&Contact.name,&Contact.phonenumber);
@@ -61,7 +57,6 @@ void write()
 		fflush(stdin);
 		printf("Enter Phonenumber:\n");
 		scanf("%s",Contact.phonenumber);
-		//fwrite(&Contact,sizeof(Contact),1,f);
 		fprintf(f,"%s\t%s\n",Contact.name,Contact.phonenumber);
 		fflush(stdin);
 		printf("\n\nContact is successfully added!");
@@ -89,6 +84,8 @@ void find()
 	scanf("%s",nameToSearch);
 	//printf("%s",nameToSearch);
 	search(nameToSearch);
+	printf("\nPress any key to exit");
+	getch();
 }
 
 void search(char nameToSearch[])
@@ -106,35 +103,64 @@ void search(char nameToSearch[])
 
 int main ()
 {
+while(1){
+	system("cls");
+	int state,i;
 	
-	char state;
+	printf("   ******************************  |MAIN MENU|  ***************************** \n");
+	for(i=0;i<80;i++)
+	printf("=");
+	printf("\n");
+	printf("\t\t *Please enter your choice for menu*:");
+	printf("\n\n");
+	printf(" \n Enter 1 -> See your contact list");
+	printf("\n----------------------------------");
+	printf(" \n Enter 2 -> Add a new contact");
+	printf("\n----------------------------------");
+	printf(" \n Enter 3 -> Search a contact");
+	printf("\n----------------------------------");
+	printf(" \n Enter 4 -> Exit");
+	printf("\n\n");
+	for(i=0;i<80;i++)
+	printf("=");
+	printf("\n");
 	
-	printf("What do you want to do? (Read : r, Write: w,Find: f)\n");
-	scanf("%c", &state);
+	scanf("%d", &state);
 	//printf("Your state is : %c",state);
 	
 	switch(state)
 	{
-		case 'r':
+		case 1:
 			system("cls");
 			//printf("Your state is Read");
 			read();
 			break;
-		case 'w':
+		case 2:
 			system("cls");
 			//printf("Your state is Write");
 			write();
 			break;
-		case 'f':
+		case 3:
 			system("cls");
-			printf("Your state is Find\n");
+			//printf("Your state is Find\n");
 			find();
+			break;
+		case 4:
+			system("cls");
+			for(i=0;i<80;i++)
+			printf("=");
+			printf("\n");
+			printf("   ******************************  |THANK YOU|  ***************************** \n");
+			for(i=0;i<80;i++)
+			printf("=");
+			printf("\n");
+			exit(0);
 			break;
 		default:
 			system("cls");
 			printf("Invalid input");
 			break;
 	}
-
+}
 }
 
