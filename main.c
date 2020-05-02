@@ -9,7 +9,7 @@ struct ContactDetail
 	char phonenumber[50];
 }Contact;
 
-int read()
+void read()
 {
 	int i;
 	FILE *f;
@@ -19,7 +19,7 @@ int read()
 		system("cls");
 		printf("No Contacts Available");
 		getch();
-		return -1;
+		exit(0);
 	}
 	system("cls");
 	printf("NAME");
@@ -69,7 +69,7 @@ void write()
 	fclose(f);
 }
 
-int find()
+void find()
 {
 	char nameToSearch[40];
 	FILE *f;
@@ -79,7 +79,7 @@ int find()
 		system("cls");
 		printf("No Contacts Available");
 		getch();
-		return -1;
+		exit(0);
 	}
 	printf("Enter the name:\n");
 	scanf("%s",nameToSearch);
